@@ -10,7 +10,10 @@ public class ProcesadorPedidos {
 
 	public double procesar(ArrayList<String> listaNombres, ArrayList<Double> precios) {
         double total = 0;
-
+        
+      //prueba CI
+        System.out.println("CI test update");
+        
         for (int i = 0; i < precios.size(); i++) {
             System.out.println("Añadiendo producto: " + listaNombres.get(i));
             total = total + precios.get(i);
@@ -39,4 +42,4 @@ public class ProcesadorPedidos {
 		return total + (total * IVA);
 	}
 }
-//prueba CI
+
