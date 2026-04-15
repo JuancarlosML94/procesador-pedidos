@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class ProcesadorPedidos {
 
-    public double procesar(ArrayList<String> listaNombres, ArrayList<Double> precios) {
+    private static final double DESCUENTO = 0.10;
+	private static final double IVA = 0.21;
+
+	public double procesar(ArrayList<String> listaNombres, ArrayList<Double> precios) {
         double total = 0;
 
         for (int i = 0; i < precios.size(); i++) {
@@ -12,7 +15,7 @@ public class ProcesadorPedidos {
 
         if (total > 100) {
             System.out.println("Descuento aplicado.");
-            total = total - (total * 0.10); 
+            total = total - (total * DESCUENTO); 
         }
 
         double totalFinal = calcularIVA(total);
@@ -30,6 +33,6 @@ public class ProcesadorPedidos {
 	}
 
 	private double calcularIVA(double total) {
-		return total + (total * 0.21);
+		return total + (total * IVA);
 	}
 }
