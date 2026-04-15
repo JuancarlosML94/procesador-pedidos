@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class ProcesadorPedidos {
 
-    private static final double GASTOS_ENVIO = 15.95;
+    private static final int UMBRAL_DESCUENTO = 100;
+	private static final double GASTOS_ENVIO = 15.95;
 	private static final double DESCUENTO = 0.10;
 	private static final double IVA = 0.21;
 
@@ -14,7 +15,7 @@ public class ProcesadorPedidos {
             total = total + precios.get(i);
         }
 
-        if (total > 100) {
+        if (total > UMBRAL_DESCUENTO) {
             System.out.println("Descuento aplicado.");
             total = total - (total * DESCUENTO); 
         }
