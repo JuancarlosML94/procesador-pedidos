@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class ProcesadorPedidos {
 
-    private static final double DESCUENTO = 0.10;
+    private static final double GASTOS_ENVIO = 15.95;
+	private static final double DESCUENTO = 0.10;
 	private static final double IVA = 0.21;
 
 	public double procesar(ArrayList<String> listaNombres, ArrayList<Double> precios) {
@@ -27,7 +28,7 @@ public class ProcesadorPedidos {
 
 	private double aplicarGastosEnvio(double totalFinal) {
 		if (totalFinal < 500) {
-            totalFinal = totalFinal + 15.95;
+            totalFinal = totalFinal + GASTOS_ENVIO;
         }
 		return totalFinal;
 	}
