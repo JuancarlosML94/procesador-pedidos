@@ -17,12 +17,17 @@ public class ProcesadorPedidos {
 
         double totalFinal = calcularIVA(total);
 
-        if (totalFinal < 500) {
-            totalFinal = totalFinal + 15.95;
-        }
+        totalFinal = aplicarGastosEnvio(totalFinal);
 
         return totalFinal;
     }
+
+	private double aplicarGastosEnvio(double totalFinal) {
+		if (totalFinal < 500) {
+            totalFinal = totalFinal + 15.95;
+        }
+		return totalFinal;
+	}
 
 	private double calcularIVA(double total) {
 		return total + (total * 0.21);
