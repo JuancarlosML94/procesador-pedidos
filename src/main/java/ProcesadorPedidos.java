@@ -2,25 +2,25 @@ import java.util.ArrayList;
 
 public class ProcesadorPedidos {
 
-    public double procesar(ArrayList<String> a, ArrayList<Double> b) {
-        double t = 0;
+    public double procesar(ArrayList<String> listaNombres, ArrayList<Double> precios) {
+        double total = 0;
 
-        for (int i = 0; i < b.size(); i++) {
-            System.out.println("Añadiendo producto: " + a.get(i));
-            t = t + b.get(i);
+        for (int i = 0; i < precios.size(); i++) {
+            System.out.println("Añadiendo producto: " + listaNombres.get(i));
+            total = total + precios.get(i);
         }
 
-        if (t > 100) {
+        if (total > 100) {
             System.out.println("Descuento aplicado.");
-            t = t - (t * 0.10); 
+            total = total - (total * 0.10); 
         }
 
-        double res = t + (t * 0.21);
+        double totalFinal = total + (total * 0.21);
 
-        if (res < 500) {
-            res = res + 15.95;
+        if (totalFinal < 500) {
+            totalFinal = totalFinal + 15.95;
         }
 
-        return res;
+        return totalFinal;
     }
 }
