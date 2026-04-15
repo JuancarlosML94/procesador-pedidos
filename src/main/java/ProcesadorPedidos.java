@@ -15,7 +15,7 @@ public class ProcesadorPedidos {
             total = total - (total * 0.10); 
         }
 
-        double totalFinal = total + (total * 0.21);
+        double totalFinal = calcularIVA(total);
 
         if (totalFinal < 500) {
             totalFinal = totalFinal + 15.95;
@@ -23,4 +23,8 @@ public class ProcesadorPedidos {
 
         return totalFinal;
     }
+
+	private double calcularIVA(double total) {
+		return total + (total * 0.21);
+	}
 }
